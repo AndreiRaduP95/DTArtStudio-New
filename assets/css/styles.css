@@ -1,0 +1,429 @@
+:root{
+  --accent:#0f172a; /* deep slate */
+  --accent-2:#0ea5a4; /* teal */
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --card:#f8fafc;
+  --maxw:1200px;
+  --radius:10px;
+  --shadow: 0 6px 18px rgba(15,23,42,0.08);
+}
+
+/* Global Reset */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:var(--accent);background:var(--bg);}
+a{text-decoration:none;color:var(--accent);transition:0.3s}
+a:hover{color:var(--accent-2)}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* Header */
+.header {
+  width: 100%;
+  background-color: #1b241b; /* solid metallic grey */
+  border-bottom: 1px solid #2f2f2f; /* slightly darker border for contrast */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 72px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+.site-title {
+  font-weight: 700;
+  color: #fff; /* white text for contrast */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav a {
+  color: #fff; /* white links */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav .dropdown {
+  position: relative;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown menu background */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1b241b;  /* match header background */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 8px 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease-in-out;
+  z-index: 100;
+}
+
+/* Show menu when active */
+.dropdown-menu.show,
+.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown links */
+.dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  color: #fff;         /* white text */
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background: #0ea5a4;  /* accent hover effect */
+  color: #fff;           /* keep white text on hover */
+}
+.nav .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  color: #fff; /* white links */
+  text-decoration: none;
+}
+
+.nav .search {
+  border: 1px solid #fff;  /* keep a subtle border */
+  padding: 6px 10px;
+  border-radius: 8px;
+  width: 220px;
+  background: #000; /* black background */
+  color: #fff;      /* white text */
+}
+
+.nav .search::placeholder {
+  color: #fff; /* white placeholder text */
+  opacity: 1;  /* ensures full white color in all browsers */
+}
+
+.icon-row {
+  display: flex;
+  gap: 20px;          /* increased space between icons */
+  align-items: center;
+}
+
+.icon-link i {
+  font-size: 28px;    /* larger icons */
+  color: #fff;        /* white icons */
+  transition: color 0.3s;
+}
+
+.icon-link:hover i {
+  color: #0ea5a4;     /* accent color on hover */
+}
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2f2f2f; /* darker border for contrast */
+  color: #fff;
+  background: #5a5a5a; /* metallic grey background */
+}
+
+
+/* Hero / Carousel */
+.hero-carousel {
+  position: relative;
+  width: 100%;       /* full width of the page */
+  height: 100vh;     /* full viewport height */
+  overflow: hidden;
+  background: #000;  /* optional background color for contrast */
+}
+
+.hero-carousel .carousel-inner {
+  max-width: 1400px;   /* match header-inner */
+  margin: 0 auto;      /* center it horizontally */
+  padding: 0 20px;     /* same horizontal padding as header-inner */
+  height: 100%;        /* fill the hero-carousel height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position:relative;
+  min-width:100%;
+  height:100%;
+}
+
+.slide img {
+  width:100%;
+  height:100%;
+  object-fit:cover; /* cover entire slide */
+  display:block;
+}
+
+.slide-text.top {
+  position:absolute;
+  top:20px; /* you can adjust for spacing from top */
+  left:50%;
+  transform:translateX(-50%);
+  text-align:center;
+  color:#fff;
+  background:rgba(0,0,0,0.35);
+  padding:20px;
+  border-radius:10px;
+  max-width:90%; /* prevent overflow on small screens */
+}
+
+.slide-text.top h1 {
+  margin:0;
+  font-size:36px;
+}
+
+.slide-text.top p {
+  margin:8px 0;
+  font-size:18px;
+}
+
+.slide-text.top .btn {
+  margin-top:10px;
+  background:var(--accent-2);
+  color:#fff;
+  padding:12px 24px;
+  border-radius:10px;
+  display:inline-block;
+  text-decoration:none;
+}
+
+/* Carousel Controls */
+.carousel-controls{position:absolute;top:50%;transform:translateY(-50%);left:10px;right:10px;display:flex;justify-content:space-between}
+.ctrl{background:rgba(255,255,255,0.9);border-radius:999px;padding:8px;cursor:pointer}
+
+
+/* Footer */
+.site-footer {
+  background: #000; /* black background */
+  border-top: 1px solid #222; /* subtle contrast border */
+  padding: 28px 0;
+  margin-top: 0px;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.footer-logos {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.footer-logos .item {
+  background: #222; /* slightly lighter black for contrast */
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  color: #fff; /* white text */
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* white icons */
+  font-size: 24px; /* increase size if needed */
+  margin-right: 15px; /* space between icons */
+  transition: 0.3s;
+  background: none; /* remove background */
+  border: none;     /* remove border */
+  width: auto;      /* remove fixed width */
+  height: auto;     /* remove fixed height */
+  border-radius: 0; /* remove border radius */
+}
+
+.socials a:hover {
+  color: var(--accent-2); /* optional hover color effect */
+}
+
+/* Projects list horizontal scroll */
+#projects-list {
+  display: flex;
+  overflow-x: auto;       /* enable horizontal scroll */
+  gap: 20px;
+  padding-bottom: 16px;   /* space for scrollbar if needed */
+  scroll-behavior: smooth; 
+}
+
+#projects-list::-webkit-scrollbar {
+  height: 8px; /* horizontal scrollbar height */
+}
+
+#projects-list::-webkit-scrollbar-thumb {
+  background: var(--accent-2);
+  border-radius: 4px;
+}
+
+.card {
+  flex: 0 0 280px;       /* fixed width per card */
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-body h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.card-body p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: var(--muted);
+  flex-grow: 1;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.card-actions button {
+  padding: 6px 12px;
+  background: var(--accent-2);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card-actions button:hover {
+  background: var(--accent);
+}
+
+/* Modal */
+.modal {
+  display: none; 
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.modal-inner {
+  background: #fff;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal .gallery img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.modal .tech {
+  padding: 12px;
+}
+
+
+
+/* Responsive */
+@media (max-width:900px){
+  .nav .search{display:none}
+  .slide img{height:400px}
+}
+@media (max-width:600px){
+  .slide img{height:300px}
+  .slide-text.top h1{font-size:24px}
+  .slide-text.top p{font-size:16px}
+}
+
+/* Optional: prevent menu from closing immediately on touch devices */
+@media (hover: none) {
+  .dropdown:hover .dropdown-menu {
+    display: none; /* prevent hover effect on mobile */
+  }
+}

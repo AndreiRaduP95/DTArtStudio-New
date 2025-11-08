@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "title": "Casa Alba",
+    "subtitle": "Locuinta privata moderna",
+    "category": "Case parter",
+    "images": [
+      "assets/img/Project1/1",
+      "assets/img/Project1/2"
+    ],
+    "tech": {"Suprafata": "210 m2","Structura": "Beton armat","An": "2023","Subsol":"Nu"}
+  },
+  {
+    "id": 2,
+    "title": "Vila Lac",
+    "subtitle": "Case parter + etaj",
+    "category": "Case parter + etaj",
+    "images": [
+      "assets/img/Project2/1"
+    ],
+    "tech": {"Suprafata": "340 m2","Structura": "Lemn + beton","An": "2021"}
+  },
+  {
+    "id": 3,
+    "title": "Pavilion Public",
+    "subtitle": "Spatiu cultural",
+    "category": "Constructii publice",
+    "images": [
+      "assets/img/Project3/1"
+    ],
+    "tech": {"Suprafata": "1200 m2","Structura": "Otel","An": "2019"}
+  }
+]

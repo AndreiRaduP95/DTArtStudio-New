@@ -1,0 +1,21 @@
+// Example: filter projects by category
+const category = 'Case parter' // change per page
+const filteredProjects = PROJECTS.filter(p => p.category === category)
+
+const list = document.getElementById('projects-list')
+list.innerHTML = ''
+filteredProjects.forEach(p => {
+  const el = document.createElement('article')
+  el.className = 'card'
+  el.innerHTML = `
+    <img src="${p.images[0]}" alt="${p.title}" />
+    <div class="card-body">
+      <h4>${p.title}</h4>
+      <p class="mt-2">${p.subtitle||''}</p>
+      <div class="card-actions">
+        <span style="color:var(--muted)">Categorie: ${p.category}</span>
+        <button class="btn" data-open-modal="${p.id}">Vezi mai mult</button>
+      </div>
+    </div>`
+  list.appendChild(el)
+})
