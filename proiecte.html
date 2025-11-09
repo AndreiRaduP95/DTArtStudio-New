@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>DTArt Studio — Proiecte</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header class="header">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+    <div class="header-inner">
       <div class="brand">
         <div class="logo">DT</div>
         <div>
@@ -20,12 +21,14 @@
       <nav class="nav">
         <a href="index.html">Acasa</a>
         <div class="dropdown">
-          <a class="drop-btn" href="proiecte.html">Proiecte ▾</a>
+          <a class="drop-btn" href="proiecte.html">Proiecte</a>
           <div class="dropdown-menu">
             <a href="proiecte.html?cat=Case%20parter">Case parter</a>
-            <a href="proiecte.html?cat=Case%20parter%20+%20etaj">Case parter + etaj</a>
+            <a href="proiecte.html?cat=Case%20parter%20%2B%20etaj">Case parter + etaj</a>
             <a href="proiecte.html?cat=Constructii%20publice">Constructii publice</a>
             <a href="proiecte.html?cat=Interioare">Interioare</a>
+            <a href="proiecte.html?cat=Constructii%20rezidentiale">Constructii rezidentiale</a>
+            <a href="proiecte.html?cat=Constructii%20comerciale">Constructii comerciale</a>
           </div>
         </div>
         <a href="despre.html">Despre noi</a>
@@ -36,47 +39,57 @@
       </nav>
 
       <div class="icon-row">
-        <a class="icon-btn" href="https://instagram.com" target="_blank" aria-label="Instagram">IG</a>
-        <a class="icon-btn" href="https://facebook.com" target="_blank" aria-label="Facebook">FB</a>
-        <a class="icon-btn" href="mailto:hello@dtartstudio.ro" aria-label="Email">@</a>
-        <a class="icon-btn" href="https://wa.me/407215550123" aria-label="WhatsApp">WA</a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="icon-link">
+    <i class="fab fa-instagram"></i>
+  </a>
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="icon-link">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="mailto:hello@dtartstudio.ro" aria-label="Email" class="icon-link">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://wa.me/407215550123" aria-label="WhatsApp" class="icon-link">
+    <i class="fab fa-whatsapp"></i>
+  </a>
       </div>
     </div>
   </header>
 
   <main class="container" style="padding-top:28px;padding-bottom:28px">
-    <h2>Proiecte</h2>
+    <h2 id="page-title">Proiecte</h2>
     <p class="text-muted">Exploreaza proiectele noastre. Filtreaza dupa tip sau foloseste cautarea.</p>
 
-    <section id="projects-list" class="grid" style="
-      margin-top:18px;
-      display:flex;
-      gap:20px;
-      overflow-x:auto;
-      padding-bottom:10px;
-      scroll-snap-type:x mandatory;
-    ">
+    <section id="projects-list" class="grid">
       <!-- projects injected by main.js -->
     </section>
+    <div id="pagination" class="pagination"></div>
   </main>
 
   <!-- modal -->
-  <div id="project-modal" class="modal" role="dialog" aria-hidden="true">
-    <div class="modal-inner">
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px;border-bottom:1px solid #eef2f7">
-        <div style="font-weight:700">Detalii proiect</div>
-        <div>
-          <button class="modal-prev" style="margin-right:8px">◀</button>
-          <button class="modal-next">▶</button>
-          <button class="modal-close" style="margin-left:12px">Inchide</button>
-        </div>
-      </div>
-      <div class="gallery" style="text-align:center;">
-        <img src="" alt="galerie" style="max-width:100%; max-height:400px;"/>
-      </div>
-      <div class="tech" style="margin-top:12px;"></div>
+<div id="project-modal" class="modal" role="dialog" aria-hidden="true">
+  <div class="modal-inner">
+    <!-- Modal header with close button -->
+    <div class="modal-header" style="display:flex;justify-content:space-between;align-items:center;padding:12px;border-bottom:1px solid #eef2f7;">
+      <div style="font-weight:700">Detalii proiect</div>
+      <button class="modal-close" aria-label="Close">✖</button>
     </div>
+
+    <!-- Modal gallery -->
+    <div class="gallery" style="position:relative;text-align:center;">
+      <img src="" alt="galerie" style="max-width:100%; max-height:400px; display:block; margin:0 auto;"/>
+
+      <!-- Prev / Next arrows overlay -->
+      <button class="modal-prev" aria-label="Previous">◀</button>
+      <button class="modal-next" aria-label="Next">▶</button>
+    </div>
+
+    <div class="tech" style="margin-top:12px;"></div>
   </div>
+</div>
+
+    <div class="tech" style="margin-top:12px;"></div>
+  </div>
+</div>
 
   <!-- footer -->
   <footer class="site-footer">
@@ -88,15 +101,30 @@
         <div class="item">EXPERIENTA</div>
       </div>
       <div class="socials">
-        <a href="https://instagram.com" target="_blank">IG</a>
-        <a href="https://facebook.com" target="_blank">FB</a>
-        <a href="mailto:hello@dtartstudio.ro">@</a>
-        <a href="https://wa.me/407215550123">WA</a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="icon-link">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="icon-link">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="mailto:hello@dtartstudio.ro" aria-label="Email" class="icon-link">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://wa.me/407215550123" aria-label="WhatsApp" class="icon-link">
+    <i class="fab fa-whatsapp"></i>
+  </a>
       </div>
     </div>
   </footer>
 
   <!-- JS -->
   <script src="assets/js/main.js"></script>
+  <script>
+    // Update heading dynamically based on category
+    const s = new URLSearchParams(window.location.search);
+    const cat = s.get('cat');
+    const pageTitle = document.getElementById('page-title');
+    pageTitle.textContent = cat ? `Proiecte: ${cat}` : 'Proiecte';
+  </script>
 </body>
 </html>

@@ -4,30 +4,167 @@
     "title": "Casa Alba",
     "subtitle": "Locuinta privata moderna",
     "category": "Case parter",
-    "images": [
-      "assets/img/Project1/1",
-      "assets/img/Project1/2"
-    ],
-    "tech": {"Suprafata": "210 m2","Structura": "Beton armat","An": "2023","Subsol":"Nu"}
+    "images": ["assets/img/Project1/1", "assets/img/Project1/2"],
+    "tech": {"Suprafata": "210 m2", "Structura": "Beton armat", "An": "2023", "Subsol": "Nu"}
   },
   {
     "id": 2,
     "title": "Vila Lac",
     "subtitle": "Case parter + etaj",
     "category": "Case parter + etaj",
-    "images": [
-      "assets/img/Project2/1"
-    ],
-    "tech": {"Suprafata": "340 m2","Structura": "Lemn + beton","An": "2021"}
+    "images": ["assets/img/Project2/1"],
+    "tech": {"Suprafata": "340 m2", "Structura": "Lemn + beton", "An": "2021"}
   },
   {
     "id": 3,
     "title": "Pavilion Public",
     "subtitle": "Spatiu cultural",
     "category": "Constructii publice",
-    "images": [
-      "assets/img/Project3/1"
-    ],
-    "tech": {"Suprafata": "1200 m2","Structura": "Otel","An": "2019"}
+    "images": ["assets/img/Project3/1"],
+    "tech": {"Suprafata": "1200 m2", "Structura": "Otel", "An": "2019"}
+  },
+  {
+    "id": 4,
+    "title": "Cabana Verde",
+    "subtitle": "Casa de vacanta montana",
+    "category": "Case parter",
+    "images": ["assets/img/Project4/1", "assets/img/Project4/2"],
+    "tech": {"Suprafata": "180 m2", "Structura": "Lemn", "An": "2022", "Subsol": "Da"}
+  },
+  {
+    "id": 5,
+    "title": "Resedinta Marina",
+    "subtitle": "Vila la malul marii",
+    "category": "Case parter + etaj",
+    "images": ["assets/img/Project5/1", "assets/img/Project5/2"],
+    "tech": {"Suprafata": "290 m2", "Structura": "Beton + sticla", "An": "2023", "Piscina": "Da"}
+  },
+  {
+    "id": 6,
+    "title": "Bloc Urban",
+    "subtitle": "Imobil cu apartamente moderne",
+    "category": "Constructii rezidentiale",
+    "images": ["assets/img/Project6/1"],
+    "tech": {"Suprafata": "4200 m2", "Structura": "Beton armat", "An": "2020", "Etaje": "6"}
+  },
+  {
+    "id": 7,
+    "title": "Casa Minimal",
+    "subtitle": "Design minimalist si eficient",
+    "category": "Case parter",
+    "images": ["assets/img/Project7/1"],
+    "tech": {"Suprafata": "160 m2", "Structura": "Beton + lemn", "An": "2024", "Subsol": "Nu"}
+  },
+  {
+    "id": 8,
+    "title": "Centru Sportiv",
+    "subtitle": "Sala multifunctionala moderna",
+    "category": "Constructii publice",
+    "images": ["assets/img/Project8/1", "assets/img/Project8/2"],
+    "tech": {"Suprafata": "2500 m2", "Structura": "Otel", "An": "2022"}
+  },
+  {
+    "id": 9,
+    "title": "Casa Rustica",
+    "subtitle": "Locuinta traditionala din lemn",
+    "category": "Case parter",
+    "images": ["assets/img/Project9/1"],
+    "tech": {"Suprafata": "190 m2", "Structura": "Lemn masiv", "An": "2021"}
+  },
+  {
+    "id": 10,
+    "title": "Cladire de birouri Nova",
+    "subtitle": "Spatiu de birouri premium",
+    "category": "Constructii comerciale",
+    "images": ["assets/img/Project10/1", "assets/img/Project10/2"],
+    "tech": {"Suprafata": "3600 m2", "Structura": "Beton si sticla", "An": "2020"}
+  },
+  {
+    "id": 11,
+    "title": "Casa Compacta",
+    "subtitle": "Locuinta eficienta pentru tineri",
+    "category": "Case parter",
+    "images": ["assets/img/Project11/1"],
+    "tech": {"Suprafata": "130 m2", "Structura": "Beton armat", "An": "2024"}
+  },
+  {
+    "id": 12,
+    "title": "Vila Panoramic",
+    "subtitle": "Casa cu vedere asupra orasului",
+    "category": "Case parter + etaj",
+    "images": ["assets/img/Project12/1", "assets/img/Project12/2"],
+    "tech": {"Suprafata": "310 m2", "Structura": "Otel + sticla", "An": "2022"}
+  },
+  {
+    "id": 13,
+    "title": "Scoala Generala Orion",
+    "subtitle": "Unitate de invatamant moderna",
+    "category": "Constructii publice",
+    "images": ["assets/img/Project13/1"],
+    "tech": {"Suprafata": "2800 m2", "Structura": "Beton armat", "An": "2019"}
+  },
+  {
+    "id": 14,
+    "title": "Cabana de Munte Aurora",
+    "subtitle": "Refugiu montan elegant",
+    "category": "Case parter",
+    "images": ["assets/img/Project14/1", "assets/img/Project14/2"],
+    "tech": {"Suprafata": "150 m2", "Structura": "Lemn", "An": "2023"}
+  },
+  {
+    "id": 15,
+    "title": "Centru Medical Vita",
+    "subtitle": "Clinica privata de sanatate",
+    "category": "Constructii publice",
+    "images": ["assets/img/Project15/1"],
+    "tech": {"Suprafata": "2100 m2", "Structura": "Beton si otel", "An": "2021"}
+  },
+  {
+    "id": 16,
+    "title": "Casa Eden",
+    "subtitle": "Casa sustenabila cu panouri solare",
+    "category": "Case parter",
+    "images": ["assets/img/Project16/1", "assets/img/Project16/2"],
+    "tech": {"Suprafata": "200 m2", "Structura": "Lemn si sticla", "An": "2024", "Panouri solare": "Da"}
+  },
+  {
+    "id": 17,
+    "title": "Vila Harmony",
+    "subtitle": "Design contemporan si elegant",
+    "category": "Case parter + etaj",
+    "images": ["assets/img/Project17/1"],
+    "tech": {"Suprafata": "270 m2", "Structura": "Beton", "An": "2023"}
+  },
+  {
+    "id": 18,
+    "title": "Casa Delta",
+    "subtitle": "Locuinta de familie spatioasa",
+    "category": "Case parter",
+    "images": ["assets/img/Project18/1", "assets/img/Project18/2"],
+    "tech": {"Suprafata": "230 m2", "Structura": "Caramida", "An": "2022"}
+  },
+  {
+    "id": 19,
+    "title": "Hotel Rivera",
+    "subtitle": "Complex turistic modern",
+    "category": "Constructii comerciale",
+    "images": ["assets/img/Project19/1"],
+    "tech": {"Suprafata": "5000 m2", "Structura": "Otel + beton", "An": "2021", "Etaje": "8"}
+  },
+  {
+    "id": 20,
+    "title": "Cladire administrativa CityHall",
+    "subtitle": "Sediu administrativ modernizat",
+    "category": "Constructii publice",
+    "images": ["assets/img/Project20/1"],
+    "tech": {"Suprafata": "3200 m2", "Structura": "Beton armat", "An": "2018"}
+  },
+  {
+    "id": 21,
+    "title": "Cladire administrativa CityHall",
+    "subtitle": "Sediu administrativ modernizat",
+    "category": "Interioare",
+    "images": ["assets/img/Project20/1"],
+    "tech": {"Suprafata": "3200 m2", "Structura": "Beton armat", "An": "2018"}
   }
 ]

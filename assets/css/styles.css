@@ -283,7 +283,15 @@ a:hover{color:var(--accent-2)}
   display: flex;
   gap: 10px;
 }
-
+/* footer at bottom */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
 .socials a {
   display: inline-flex;
   align-items: center;
@@ -303,13 +311,40 @@ a:hover{color:var(--accent-2)}
   color: var(--accent-2); /* optional hover color effect */
 }
 
-/* Projects list horizontal scroll */
+/* Projects grid */
 #projects-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px; /* space between cards */
+  margin: 40px auto;
+  max-width: var(--maxw);
+  justify-items: center;
+}
+
+/* pagination */
+.pagination {
   display: flex;
-  overflow-x: auto;       /* enable horizontal scroll */
-  gap: 20px;
-  padding-bottom: 16px;   /* space for scrollbar if needed */
-  scroll-behavior: smooth; 
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent-2);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.pagination button[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+.pagination button:hover:not([disabled]) {
+  background: var(--accent);
 }
 
 #projects-list::-webkit-scrollbar {
@@ -321,14 +356,19 @@ a:hover{color:var(--accent-2)}
   border-radius: 4px;
 }
 
+/* Card styling */
 .card {
-  flex: 0 0 280px;       /* fixed width per card */
   background: var(--card);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s;
+
+  height: 380px;       /* fixed height for all cards */
+  width: 100%;         /* full width of grid cell */
+  max-width: 300px;    /* optional max width */
 }
 
 .card img {
@@ -337,31 +377,28 @@ a:hover{color:var(--accent-2)}
   object-fit: cover;
 }
 
+.card-body h4,
+.card-body p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* limit text to 2 lines */
+  -webkit-box-orient: vertical;
+  margin: 4px 0;
+}
+
 .card-body {
-  padding: 12px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-}
-
-.card-body h4 {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.card-body p {
-  margin: 8px 0;
-  font-size: 14px;
-  color: var(--muted);
-  flex-grow: 1;
+  padding: 12px;
 }
 
 .card-actions {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 8px;
+  flex-direction: column; /* stack children vertically */
+  align-items: flex-start; /* align to left; use center if you prefer */
+  margin-top: 8px;        /* space between text and button */
+  gap: 6px;               /* optional gap between category text and button */
 }
 
 .card-actions button {
@@ -378,6 +415,9 @@ a:hover{color:var(--accent-2)}
   background: var(--accent);
 }
 
+.card:hover {
+  transform: translateY(-4px);
+}
 /* Modal */
 .modal {
   display: none; 
@@ -388,7 +428,76 @@ a:hover{color:var(--accent-2)}
   align-items: center;
   z-index: 200;
 }
+/* Modal buttons styling */
+.modal-controls button {
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  margin-left: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+.modal-controls button:hover {
+  background: rgba(0,0,0,0.8);
+}
+/* Optional: place prev/next on image edges */
+.modal-prev, .modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  font-size: 24px;
+  padding: 8px 12px;
+}
+/* Prev/Next buttons */
+.modal-prev,
+.modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+  z-index: 10;
+}
 
+.modal-prev:hover,
+.modal-next:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.modal-prev {
+  left: 10px;
+}
+
+.modal-next {
+  right: 10px;
+}
+/* Close button in top-right */
+.modal-close {
+  font-size: 20px;
+  background: none;
+  color: #000;
+  font-weight: 700;
+}
+
+/* Close button styling */
+.modal-close {
+  font-size: 20px;
+  background: none;
+  color: #000;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
 .modal-inner {
   background: #fff;
   border-radius: 10px;
@@ -427,3 +536,208 @@ a:hover{color:var(--accent-2)}
     display: none; /* prevent hover effect on mobile */
   }
 }
+/* -------------------- Mobile Styles -------------------- */
+@media (max-width: 768px) {
+
+  /* Prevent horizontal overflow */
+  html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+
+  /* Header adjustments */
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 12px;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav a {
+    font-size: 16px;
+    word-wrap: break-word;
+    padding: 6px 0;
+  }
+
+  .nav .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+    width: 100%;
+    box-shadow: none;
+    padding: 0;
+    background: #1b241b;
+  }
+
+  .dropdown-menu a {
+    padding: 8px 10px;
+  }
+
+  .dropdown.active .dropdown-menu {
+    display: block;
+  }
+
+  .nav .search {
+    width: 100%;
+    padding: 6px 8px;
+    margin-bottom: 6px;
+  }
+
+  .icon-row {
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .icon-link i {
+    font-size: 24px;
+  }
+
+  /* Hero Carousel - fully responsive */
+  .hero-carousel {
+    width: 100%;
+    /* height: auto; scale height automatically */
+    aspect-ratio: 16/9; /* maintain ratio */
+    overflow: hidden;
+    /* margin-bottom: 12px; */
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .slide-text.top {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px;
+    max-width: 90%;
+  }
+
+  .slide-text.top h1 {
+    font-size: clamp(16px, 5vw, 22px); /* scales dynamically */
+    margin-bottom: 4px;
+  }
+
+  .slide-text.top p {
+    font-size: clamp(12px, 4vw, 14px);
+    margin-bottom: 6px;
+  }
+
+  .slide-text.top .btn {
+    padding: 6px 12px;
+    font-size: clamp(12px, 4vw, 14px);
+  }
+
+  /* Projects Grid - fully responsive */
+  #projects-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 16px auto;
+    width: 100%;
+    padding: 0 8px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto; /* scale height dynamically */
+    aspect-ratio: 4/3; /* maintain image ratio */
+    object-fit: cover;
+  }
+
+  .card-body h4,
+  .card-body p {
+    -webkit-line-clamp: 2;
+    margin: 2px 0;
+  }
+
+  /* Modal */
+  .modal-inner {
+    max-width: 95%;
+    width: 95%;
+    max-height: 95vh;
+    border-radius: 8px;
+    position: relative; /* make modal the positioning reference */
+  }
+
+  .modal .gallery img {
+    max-height: 280px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .modal-prev,
+  .modal-next {
+    font-size: 18px;
+    padding: 6px 10px;
+  }
+
+ .modal-close {
+  position: absolute;
+  right: 8px;    /* distance from right inside modal */
+  font-size: 20px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border-radius: 20%;
+  cursor: pointer;
+  z-index: 10;   /* ensure it's above modal content */
+}
+
+  /* Footer */
+  .footer-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 12px;
+  }
+
+  .footer-logos {
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .socials {
+    gap: 6px;
+  }
+  .footer-grid .socials {
+  justify-content: center; /* center icons horizontally */
+  width: 100%;
+  gap: 8px; /* spacing between icons */
+}
+}
+
+
