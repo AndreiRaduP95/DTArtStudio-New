@@ -5,7 +5,7 @@
     "subtitle": "Locuinta privata moderna",
     "category": "Case parter",
     "images": ["assets/img/Project1/1", "assets/img/Project1/2"],
-    "tech": {"Suprafata": "210 m2", "Structura": "Beton armat", "An": "2023", "Subsol": "Nu"}
+    "tech": {"Descriere":" test test test test test","Suprafata": "210 m2", "Structura": "Beton armat", "An": "2023", "Subsol": "Nu"}
   },
   {
     "id": 2,
@@ -164,6 +164,22 @@
     "title": "Cladire administrativa CityHall",
     "subtitle": "Sediu administrativ modernizat",
     "category": "Interioare",
+    "images": ["assets/img/Project20/1"],
+    "tech": {"Suprafata": "3200 m2", "Structura": "Beton armat", "An": "2018"}
+  },
+  {
+    "id": 21,
+    "title": "Cladire administrativa CityHall",
+    "subtitle": "Sediu administrativ modernizat",
+    "category": "Amenajari exterioare",
+    "images": ["assets/img/Project20/1"],
+    "tech": {"Suprafata": "3200 m2", "Structura": "Beton armat", "An": "2018"}
+  },
+  {
+    "id": 21,
+    "title": "Cladire administrativa CityHall",
+    "subtitle": "Sediu administrativ modernizat",
+    "category": "Amenajari peisagistice",
     "images": ["assets/img/Project20/1"],
     "tech": {"Suprafata": "3200 m2", "Structura": "Beton armat", "An": "2018"}
   }

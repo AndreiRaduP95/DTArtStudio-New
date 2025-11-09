@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>DTArt Studio — Despre noi</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+<body class="about-page">
   <header class="header">
     <div class="header-inner">
       <div class="brand">
@@ -25,9 +26,11 @@
              <a href="proiecte.html?cat=Case%20parter">Case parter</a>
             <a href="proiecte.html?cat=Case%20parter%20%2B%20etaj">Case parter + etaj</a>
             <a href="proiecte.html?cat=Constructii%20publice">Constructii publice</a>
-            <a href="proiecte.html?cat=Interioare">Interioare</a>
+            <!-- <a href="proiecte.html?cat=Interioare">Interioare</a> -->
             <a href="proiecte.html?cat=Constructii%20rezidentiale">Constructii rezidentiale</a>
             <a href="proiecte.html?cat=Constructii%20comerciale">Constructii comerciale</a>
+            <a href="proiecte.html?cat=Amenajari%20exterioare">Amenajări exterioare</a>
+            <a href="proiecte.html?cat=Amenajari%20peisagistice">Amenajări peisagistice</a>
           </div>
         </div>
         <a href="despre.html">Despre noi</a>
@@ -38,55 +41,98 @@
       </nav>
 
       <div class="icon-row">
-        <a class="icon-btn" href="https://instagram.com" target="_blank" aria-label="Instagram">IG</a>
-        <a class="icon-btn" href="https://facebook.com" target="_blank" aria-label="Facebook">FB</a>
-        <a class="icon-btn" href="mailto:hello@dtartstudio.ro" aria-label="Email">@</a>
-        <a class="icon-btn" href="https://wa.me/407215550123" aria-label="WhatsApp">WA</a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="icon-link">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="icon-link">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="mailto:hello@dtartstudio.ro" aria-label="Email" class="icon-link">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://wa.me/407215550123" aria-label="WhatsApp" class="icon-link">
+    <i class="fab fa-whatsapp"></i>
+  </a>
       </div>
     </div>
   </header>
 
-  <main class="container" style="padding:36px 0">
-    <h2>Despre noi</h2>
-    <div style="display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start;margin-top:18px">
-      <div>
-        <p>DTArt Studio este un birou de arhitectura fondat in 2010, cu experienta in proiecte rezidentiale, comerciale si institutionale. Echipa noastra combina analiza contextuala cu o abordare moderna a materialelor si tehnologiei pentru a livra proiecte frumoase si eficiente.</p>
-        <p style="margin-top:12px;color:var(--muted)">(Text dinamic) — Poti schimba acesta descriere din panoul de administrare sau simplu editand fisierul HTML. Mai jos poti adauga imagini mici reprezentand portofoliu, ateliere sau oameni.</p>
+ <main class="container">
+  <h2>Despre noi</h2>
 
-        <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
-          <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=600&q=80&auto=format&fit=crop" alt="small" style="width:120px;height:80px;object-fit:cover;border-radius:8px;" />
-          <img src="https://images.unsplash.com/photo-1505691723518-36a0b66f0b6e?w=600&q=80&auto=format&fit=crop" alt="small" style="width:120px;height:80px;object-fit:cover;border-radius:8px;" />
-          <img src="https://images.unsplash.com/photo-1525909002-40e3a3e1c5df?w=600&q=80&auto=format&fit=crop" alt="small" style="width:120px;height:80px;object-fit:cover;border-radius:8px;" />
-        </div>
+  <div class="about-wrapper">
+    <!-- Main cards -->
+    <div class="about-content">
+      <div class="about-item">
+        <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=600&q=80&auto=format&fit=crop" alt="proiect 1">
+        <p><strong>DTArt Studio</strong> este un birou de arhitectură fondat în <strong>2020</strong>, dedicat creării de spații elegante, funcționale și sustenabile. Echipa noastră combină experiența în proiecte rezidențiale, comerciale și instituționale cu o abordare inovativă a designului și tehnologiilor moderne.</p>
       </div>
 
-      <aside style="background:#fff;padding:16px;border-radius:12px;box-shadow:var(--shadow)">
-        <h4>Valori</h4>
-        <ul style="color:var(--muted);margin-top:8px">
-          <li>Design contextual</li>
-          <li>Sustenabilitate</li>
-          <li>Atentie la detalii</li>
-        </ul>
-      </aside>
-    </div>
-  </main>
+      <div class="about-item">
+        <img src="assets/img/Project1/1.jpg">
+        <p>Ne concentrăm pe crearea de soluții personalizate care reflectă nevoile și stilul fiecărui client. De la analiza contextului urban și a peisajului până la selecția atentă a materialelor, fiecare proiect este conceput pentru a inspira și a aduce valoare durabilă.</p>
+      </div>
 
+      <div class="about-item">
+        <img src="assets/img/carrousel/IMG-20251018-WA0003.jpg">
+        <p>Portofoliul nostru include case rezidențiale moderne, construcții comerciale și amenajări peisagistice, toate gândite pentru a combina estetica, funcționalitatea și sustenabilitatea.</p>
+      </div>
+    </div>
+
+    <!-- Sidebar / Values -->
+    <aside class="about-values">
+      <h4>Valorile noastre</h4>
+      <ul>
+        <li><strong>Design contextual:</strong> Integrare armonioasă în peisajul urban și natural.</li>
+        <li><strong>Sustenabilitate:</strong> Proiecte care respectă mediul și resursele.</li>
+        <li><strong>Inovație:</strong> Tehnologii și materiale moderne pentru eficiență și frumusețe.</li>
+        <li><strong>Calitate și detalii:</strong> Atenție maximă la finisaje și experiența utilizatorului.</li>
+      </ul>
+    </aside>
+  </div>
+</main>
+    <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-logos">
-        <div class="item">TYPE LOGO</div>
-        <div class="item">SERVICII DE INCREDERE</div>
-        <div class="item">SUPORT</div>
-        <div class="item">EXPERIENTA</div>
-      </div>
-      <div class="socials">
-        <a href="https://instagram.com" target="_blank">IG</a>
-        <a href="https://facebook.com" target="_blank">FB</a>
-        <a href="mailto:hello@dtartstudio.ro">@</a>
-        <a href="https://wa.me/407215550123">WA</a>
-      </div>
+  <div class="container footer-grid">
+    <div class="footer-section">
+      <h4>Servicii</h4>
+      <ul>
+        <li><a href="proiecte.html?cat=Case%20parter">Case parter</a></li>
+        <li><a href="proiecte.html?cat=Case%20parter%20%2B%20etaj">Case parter + etaj</a></li>
+        <li><a href="proiecte.html?cat=Constructii%20publice">Constructii publice</a></li>
+        <li><a href="proiecte.html?cat=Constructii%20rezidentiale">Constructii rezidentiale</a></li>
+        <li><a href="proiecte.html?cat=Constructii%20comerciale">Constructii comerciale</a></li>
+        <li><a href="proiecte.html?cat=Amenajari%20exterioare">Amenajări exterioare</a></li>
+        <li><a href="proiecte.html?cat=Amenajari%20peisagistice">Amenajări peisagistice</a></li>
+      </ul>
     </div>
-  </footer>
+
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i> Iasi, România</li>
+        <li><i class="fas fa-envelope"></i> hello@dtartstudio.ro</li>
+        <li><i class="fas fa-phone"></i> +40 721 555 0123</li>
+      </ul>
+    </div>
+
+    <div class="footer-section socials">
+      <h4>Urmărește-ne</h4>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="icon-link">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="icon-link">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="mailto:hello@dtartstudio.ro" aria-label="Email" class="icon-link">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://wa.me/407215550123" aria-label="WhatsApp" class="icon-link">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+  </div>
+</footer>
 
   <script src="assets/js/main.js"></script>
 </body>

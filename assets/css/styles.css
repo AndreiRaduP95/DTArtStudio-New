@@ -1,3 +1,5 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 :root{
   --accent:#0f172a; /* deep slate */
   --accent-2:#0ea5a4; /* teal */
@@ -252,19 +254,71 @@ a:hover{color:var(--accent-2)}
 
 /* Footer */
 .site-footer {
-  background: #000; /* black background */
-  border-top: 1px solid #222; /* subtle contrast border */
-  padding: 28px 0;
-  margin-top: 0px;
+  background: #000;
+  color: #fff;
+  padding: 20px 0 10px; /* vertical padding */
+  border-top: 1px solid #222;
+  font-size: 13px; /* slightly smaller text */
 }
 
 .footer-grid {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  align-items: center;
+  justify-content: space-between; /* evenly distribute sections */
+  align-items: flex-start;
+  gap: 20px; /* fallback spacing */
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 16px;
+  flex-wrap: wrap; /* wrap on small screens */
 }
-
+.footer-section p {
+  line-height: 1.5;
+  font-size: 13px;
+  color: #bbb;
+  margin: 0;
+}
+/* General list styling */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-section ul li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #ccc;
+}
+.footer-section ul li i {
+  margin-right: 8px;
+  color: var(--accent-2);
+}
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+}
+.footer-section a:hover {
+  color: var(--accent-2);
+}
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 13px;
+  color: #777;
+  border-top: 1px solid #222;
+  margin-top: 30px;
+}
+.footer-section.socials {
+  text-align: center;
+}
+.footer-section.socials a {
+  margin-right: 12px;
+  font-size: 22px;
+  color: #fff;
+  transition: color 0.3s;
+}
+.footer-section.socials a:hover {
+  color: var(--accent-2);
+}
 .footer-logos {
   display: flex;
   gap: 18px;
@@ -279,15 +333,22 @@ a:hover{color:var(--accent-2)}
   color: #fff; /* white text */
 }
 
-.socials {
-  display: flex;
-  gap: 10px;
-}
 /* footer at bottom */
 html, body {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+/* Two-column layout only for "Servicii" */
+.footer-section:first-child ul {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  gap: 6px 14px;
+}
+
+.footer-section:first-child ul li {
+  margin-bottom: 6px;
+  line-height: 1.5;
 }
 main {
   flex: 1;
@@ -428,6 +489,41 @@ main {
   align-items: center;
   z-index: 200;
 }
+/* Modal header styling */
+.modal-header {
+  display: flex;
+  justify-content: space-between; /* title left, X button right */
+  align-items: center;            /* vertical center */
+  padding: 12px 20px;
+  border-bottom: 1px solid #eef2f7;
+  background: linear-gradient(135deg, #2c3e50, #34495e); /* deep blue-gray gradient */
+  color: #f8f9fa; /* light text for contrast */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+/* Modal title styling */
+#modal-title {
+  margin: 0;
+  font-size: 1.3rem; 
+  font-weight: 700;
+  flex: 1;
+  text-align: left;
+   font-family: 'Montserrat', sans-serif;
+}
+/* Close button styling */
+.modal-close {
+  font-size: 20px;
+  background: none;
+  color: #f8f9fa; /* same as text */
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.modal-close:hover {
+  color: #e0c97f; /* subtle gold highlight on hover */
+}
 /* Modal buttons styling */
 .modal-controls button {
   background: rgba(0,0,0,0.5);
@@ -481,23 +577,23 @@ main {
 .modal-next {
   right: 10px;
 }
-/* Close button in top-right */
+/* Close button in top-right
 .modal-close {
   font-size: 20px;
   background: none;
   color: #000;
   font-weight: 700;
-}
+} */
 
 /* Close button styling */
-.modal-close {
+/* .modal-close {
   font-size: 20px;
   background: none;
   color: #000;
   font-weight: 700;
   border: none;
   cursor: pointer;
-}
+} */
 .modal-inner {
   background: #fff;
   border-radius: 10px;
@@ -713,31 +809,234 @@ main {
   border-radius: 20%;
   cursor: pointer;
   z-index: 10;   /* ensure it's above modal content */
+}}
+
+/* Despre noi  */
+/* --- Full page background --- */
+body.about-page {
+  background: #f5f9fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-  /* Footer */
+
+body.about-page main.container {
+  background: #fafdff;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(44,62,80, 0.08);
+  padding: 40px 36px 36px 36px;
+  display: grid;
+  grid-template-columns: 1fr auto; /* main text + sidebar */
+  gap: 32px;
+  margin: 40px auto;
+  position: relative;
+}
+
+body.about-page h2 {
+  color: #305a69;
+  font-weight: 700;
+  margin-bottom: 36px;
+  letter-spacing: 0.04em;
+  font-size: 2.2rem;
+  text-align: center;
+  line-height: 1.3;
+  grid-column: 1 / -1; /* span both columns */
+}
+
+/* Wrapper for main content + sidebar */
+.about-wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto; /* main cards + sidebar */
+  gap: 32px;
+  align-items: start;
+}
+
+/* Main content cards */
+.about-content {
+  display: grid;
+  gap: 20px;
+}
+
+/* Individual card */
+.about-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.07);
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(44,62,80,0.12);
+}
+
+.about-item img {
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.about-item p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #415268;
+}
+
+.about-item p strong {
+  color: #164c67;
+  font-weight: 600;
+}
+
+/* Sidebar pinned top-right */
+/* Sidebar / values pinned top-right */
+body.about-page aside.about-values {
+  background: #ecf6f9;
+  border-radius: 12px;
+  padding: 28px 20px;
+  width: 250px;
+  position: sticky;
+  top: 40px;
+  height: fit-content;
+  box-shadow: 0 2px 12px rgba(44,62,80, 0.07);
+}
+
+aside.about-values h4 {
+  color: #347a96;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+aside.about-values ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+aside.about-values li {
+  margin-bottom: 14px;
+  color: #204257;
+  line-height: 1.6;
+}
+/* --- Mobile layout --- */
+@media (max-width: 900px) {
+  body.about-page main.container {
+    grid-template-columns: 1fr; /* single column layout */
+    padding: 24px 16px;
+    gap: 24px;
+  }
+
+  /* About wrapper: single column */
+  .about-wrapper {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center all children */
+  }
+
+  /* Sidebar moves first and centered */
+ aside.about-values {
+    order: -1;           /* move to top */
+    position: relative !important; /* override sticky */
+    top: auto !important;          /* reset top */
+    width: 100%;
+    max-width: 280px;
+    margin-bottom: 16px;
+    align-self: center;  /* center horizontally */
+  }
+
+  aside.about-values h4 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  aside.about-values ul {
+    text-align: center;
+  }
+
+  aside.about-values li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Cards: flexible grid, image on top */
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .about-item {
+    flex-direction: column; /* image on top, text below */
+    align-items: center; /* center text and image */
+    text-align: center;
+  }
+
+  .about-item img {
+    width: 100%;
+    height: 140px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+
+  .about-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Title adjustments */
+  body.about-page h2 {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+}
+/* ---------------- Mobile / Tablet ---------------- */
+@media (max-width: 768px) {
   .footer-grid {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  /* Servicii list: 2-3 columns on mobile */
+  .footer-section:first-child ul {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    text-align: center;
+    gap: 4px 8px;
+  }
+
+  .footer-section p {
+    font-size: 12px;
+  }
+
+  .footer-section.socials {
     gap: 8px;
-    width: 100%;
-    padding: 10px 12px;
+    margin-top: 6px;
   }
 
-  .footer-logos {
-    flex-wrap: wrap;
-    gap: 6px;
-    width: 100%;
+  .footer-bottom {
+    font-size: 11px;
+    padding-top: 8px;
   }
 
-  .socials {
-    gap: 6px;
+  .footer-section ul li {
+    font-size: 13px;
   }
-  .footer-grid .socials {
-  justify-content: center; /* center icons horizontally */
-  width: 100%;
-  gap: 8px; /* spacing between icons */
 }
-}
+
 
 

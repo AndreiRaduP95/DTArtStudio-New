@@ -156,6 +156,9 @@ function setupModalTriggers() {
       const id = btn.dataset.openModal;
       const project = window.PROJECTS?.find(p => String(p.id) === String(id));
       if (!project) return;
+      const modalTitleEl = modal.querySelector('#modal-title');
+    if (modalTitleEl) modalTitleEl.textContent = project.title || 'Detalii proiect';
+
 
       // Load all images from folder
       projectImages = await loadProjectImages(project.images[0]);
