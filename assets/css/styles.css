@@ -1037,6 +1037,32 @@ aside.about-values li {
     font-size: 13px;
   }
 }
+/* Info box inside the modal */
 
+.info-box {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: row; /* row instead of column */
+  gap: 10px; /* space between boxes */
+  flex-wrap: wrap; /* allows wrapping if too long */
+  z-index: 5;
+}
+
+.info-item {
+  background-color: rgba(240, 240, 240, 0.95);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap; /* prevents breaking text */
+}
 
 

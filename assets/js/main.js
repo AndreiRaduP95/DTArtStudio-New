@@ -165,6 +165,35 @@ function setupModalTriggers() {
       pos = 0;
       galleryImg.src = projectImages[pos];
       techEl.innerHTML = generateTable(project.tech || {});
+      // ✅ Populate individual boxes
+const infoBox = modal.querySelector('.info-box');
+infoBox.innerHTML = ''; // clear previous
+const tech = project.tech || {};
+
+// Define desired order
+const fields = [
+  { key: 'Camere', icon: '🛏️' },
+  { key: 'Bai', icon: '🛁' },
+  { key: 'Living', icon: '🏠' },
+  { key: 'Subsol', icon: '🏊' },
+  { key: 'Panouri solare', icon: '🔋' },
+];
+
+fields.forEach(f => {
+  if (tech[f.key]) {
+    const div = document.createElement('div');
+    div.className = 'info-item';
+    div.innerHTML = `${f.icon} ${f.key}: ${tech[f.key]}`;
+    infoBox.appendChild(div);
+  }
+});
+
+// Hide box completely if nothing to show
+if (!infoBox.hasChildNodes()) {
+  infoBox.style.display = 'none';
+} else {
+  infoBox.style.display = 'flex';
+}
       modal.style.display = 'flex';
     });
   });

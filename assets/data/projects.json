@@ -5,7 +5,7 @@
     "subtitle": "Locuinta privata moderna",
     "category": "Case parter",
     "images": ["assets/img/Project1/1", "assets/img/Project1/2"],
-    "tech": {"Descriere":" test test test test test","Suprafata": "210 m2", "Structura": "Beton armat", "An": "2023", "Subsol": "Nu"}
+    "tech": {"Descriere":" test test test test test","Suprafata": "210 m2", "Structura": "Beton armat", "An": "2023", "Subsol": "Nu","Bai":"1","Camere":"3","Living":"1"}
   },
   {
     "id": 2,
